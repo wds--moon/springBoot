@@ -23,8 +23,8 @@ import java.util.Map;
  * Created by wendongshan on 2016/11/3.
  * 配置缓存写法
  */
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
 
     @Bean

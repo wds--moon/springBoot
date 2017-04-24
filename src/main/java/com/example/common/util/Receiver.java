@@ -26,7 +26,7 @@ public class Receiver {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Bean
+    //@Bean
     public SimpleMessageListenerContainer messageContainer() {
 
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(rabbitTemplate.getConnectionFactory());

@@ -1,11 +1,16 @@
 package com.example.common.constant;
 
 /**
- * Created by liaoqianyang on 2016/10/27.
+ * 枚举类型,系统错误级别定义规则
  */
 public enum CodeEnum {
-    SUCCESS(0, "success"),
-    FAILURE(1, "failure");
+    SUCCESS(Integer.valueOf(1), "success"),
+    FAILURE(Integer.valueOf(0), "failure"),
+    ERROR_SYSTEM(Integer.valueOf(-1), "System error"),
+    ERROR_PARAMETER(Integer.valueOf(-2), "Parameter error"),
+    ERROR_MD5(Integer.valueOf(-3), "MD5 Check failure"),
+    ERROR_DATABASE(Integer.valueOf(-4), "DataBase anomaly");
+
 
     private int code;
     private String message;
@@ -41,5 +46,11 @@ public enum CodeEnum {
             }
         }
         throw new IllegalArgumentException("No matching constant for [" + code + "]");
+    }
+
+    public static void main(String[] args) {
+        System.out.println(CodeEnum.SUCCESS.getCode()+""+ CodeEnum.SUCCESS.getMessage());
+        System.out.println(CodeEnum.FAILURE.getCode()+""+ CodeEnum.SUCCESS.getMessage());
+        System.out.println(CodeEnum.valueOf(1)+"");
     }
 }
