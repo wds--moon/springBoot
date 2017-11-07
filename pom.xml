@@ -152,7 +152,12 @@
 			<artifactId>jxls-core</artifactId>
 			<version>1.0.6</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<finalName>springboot</finalName>
@@ -163,6 +168,28 @@
 			</plugin>
 		</plugins>
 	</build>
-
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <properties-resource>config/dev</properties-resource>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <properties-resource>config/test</properties-resource>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <properties-resource>config/pro</properties-resource>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
