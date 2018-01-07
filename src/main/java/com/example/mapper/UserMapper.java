@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by liaoqianyang on 2016/10/25.
  */
-public interface UserMapper  {
+public interface -UserMapper  {
 
     User selectByPrimaryKey(Integer id);
 
